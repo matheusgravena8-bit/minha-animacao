@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>Minha primeira animação</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #090b1a;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .cena {
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 8vw, 48px);
+      letter-spacing: 3px;
+      animation: aparecer 2s ease-in-out;
+    }
+
+    p {
+      color: #b8c5ff;
+      letter-spacing: 2px;
+    }
+
+    .orbita {
+      width: 180px;
+      height: 180px;
+      border: 1px solid #536dfe;
+      border-radius: 50%;
+      margin: 40px auto;
+      position: relative;
+      animation: girar 5s linear infinite;
+      box-shadow: 0 0 30px #263cff44;
+    }
+
+    .bola {
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      border-radius: 50%;
+      background: #65e7ff;
+      box-shadow: 0 0 25px #65e7ff;
+    }
+
+    .centro {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 45px;
+      height: 45px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: #9b5cff;
+      box-shadow: 0 0 40px #9b5cff;
+      animation: pulsar 2s ease-in-out infinite;
+    }
+
+    @keyframes girar {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulsar {
+      50% { transform: translate(-50%, -50%) scale(1.3); }
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="cena">
+    <h1>IMAGINE</h1>
+    <p>TUDO COMEÇA COM UMA IDEIA</p>
+
+    <div class="orbita">
+      <div class="bola"></div>
+      <div class="centro"></div>
+    </div>
+
+    <p>MINHA PRIMEIRA ANIMAÇÃO</p>
+  </main>
+</body>
+</html>
